@@ -12,6 +12,7 @@ if (mysqli_connect_errno()){
 	<title></title>
 </head>
 <body>
+    <h1>cobagit</h1>
 	<form method="post">	
 	nilai a <input type="text" name="a"><br>	
 	nilai b<input type="text" name="b"><br>
