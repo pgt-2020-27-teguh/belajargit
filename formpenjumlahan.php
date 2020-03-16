@@ -27,15 +27,20 @@ if (mysqli_connect_errno()){
 	if(isset($_POST['submit'])){ 
 	 	 	$a 	 	 	= $_POST['a']; 
 	 	 	$b  	 	= $_POST['b']; 
+            for ($i=1; $i<=10; $i++){
 	 	 	$c 			= $a+$b;
     if ($c >= 0 && $c <= 10) {$ket = 'A';}
     if ($c > 10 && $c <= 20) {$ket = 'B';}
     if ($c > 20) {$ket = 'C';}
     if ($c < 0) {$ket = 'D';}
 
+    
+                $sql = mysqli_query($koneksi, "INSERT INTO tbpenjumlahan(a,b,c,ket)     VALUES('$a','$b','$c','$ket')")     or die(mysqli_error($koneksi));
+                $a=$b;
+                $b=$c; 
+                 
+}
 		 
- 	 	 	 	$sql = mysqli_query($koneksi, "INSERT INTO tbpenjumlahan(a,b,c,ket) 	VALUES('$a','$b','$c','$ket')") 	or die(mysqli_error($koneksi)); 
- 	 	 	 	 
  	 	 	 
 }
 	?>
